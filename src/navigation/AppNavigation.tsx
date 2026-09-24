@@ -5,6 +5,7 @@ import MenuScreen from "../screens/MenuScreen";
 import DetailMenu from "../screens/DetailMenuScreen";
 import LoginScreen from "../screens/LoginScreen";
 import DetailOrder from "../screens/DetailOrderScreen";
+import NewOrderSreen from "../screens/NewOrderScreen";
 
 import { RootStackParamList } from "./types";
 
@@ -16,10 +17,16 @@ export default function AppNavigator() {
       <Stack.Screen
         name="Login"
         component={LoginScreen}
+        options={{
+          headerShown: false,
+        }}
       />
       <Stack.Screen
         name="Home"
         component={HomeScreen}
+        options={{
+          headerShown: false,
+        }}
       />
       <Stack.Screen
         name="Menu"
@@ -32,6 +39,10 @@ export default function AppNavigator() {
       <Stack.Screen
         name="DetailOrder"
         component={DetailOrder}
+      />
+      <Stack.Screen
+        name="NewOrder"
+        component={NewOrderSreen}
       />
     </Stack.Navigator>
   );

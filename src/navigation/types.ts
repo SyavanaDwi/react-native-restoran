@@ -4,10 +4,9 @@ export type RootStackParamList = {
   Menu: undefined;
   DetailMenu: {
     menuId: number;
-    nama: string;
-    harga: number;
   };
   DetailOrder: {
     orderId: number;
   };
+  NewOrder: undefined;
 };

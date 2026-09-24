@@ -41,9 +41,9 @@ export default function LoginScreen({ navigation }: Props) {
   };
 
   return (
-    <SafeAreaView className="flex-1">
+    <SafeAreaView className="flex-1 mt-5">
       <View className="justify-center px-6">
-        <Text className="text-2xl font-bold mb-6">Login</Text>
+        <Text className="text-2xl font-bold mb-6">Restoran Staff Login</Text>
 
         <TextInput
           className="border border-gray-300 rounded-lg px-4 py-3 mb-4"
