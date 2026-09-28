@@ -1,9 +1,15 @@
-import { View, Text, Pressable, FlatList } from "react-native";
+import {
+  View,
+  Text,
+  Pressable,
+  FlatList,
+  ActivityIndicator,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../navigation/types";
 import { useEffect, useState } from "react";
-import { menu } from "../types/menu";
+import { Menu } from "../types/menu";
 import api from "../services/api";
 
 type Props = NativeStackScreenProps<RootStackParamList, "DetailMenu">;
@@ -11,8 +17,9 @@ type Props = NativeStackScreenProps<RootStackParamList, "DetailMenu">;
 export default function DetailMenu({ navigation, route }: Props) {
   const { menuId } = route.params;
 
-  const [menuResto, setMenu] = useState<menu | null>(null);
+  const [menuResto, setMenu] = useState<Menu | null>(null);
 
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const getMenu = async () => {
       try {
@@ -23,10 +30,26 @@ export default function DetailMenu({ navigation, route }: Props) {
       } catch (error) {
         console.log("error detail menu");
         console.log(error);
+      } finally {
+        setLoading(false);
       }
     };
     getMenu();
-  }, []);
+  }, [menuId]);
+
+  if (loading) {
+    return (
+      <View className="flex-1 items-center justify-center bg-gray-50">
+        <ActivityIndicator
+          size="large"
+          color="#0A2947"
+        />
+        <Text className="text-gray-500 mt-4 text-base">
+          Memuat detail menu...
+        </Text>
+      </View>
+    );
+  }
 
   return (
     <SafeAreaView className="flex-1 bg-white">

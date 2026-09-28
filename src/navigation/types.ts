@@ -1,6 +1,6 @@
 export type RootStackParamList = {
   Login: undefined;
-  Home: undefined;
+  MainTab: undefined;
   Menu: undefined;
   DetailMenu: {
     menuId: number;
@@ -9,4 +9,12 @@ export type RootStackParamList = {
     orderId: number;
   };
   NewOrder: undefined;
+};
+
+export type BottomTabParamList = {
+  Home: undefined;
+  Menu: undefined;
+  Pelanggan: undefined;
+  HistoryOrder: undefined;
+  CreatePelanggan: undefined;
 };

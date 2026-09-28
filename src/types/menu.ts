@@ -1,8 +1,11 @@
-export type menu = {
+export type Menu = {
   id: number;
   menu: string;
-  harga: string;
-  katergori: string;
-  deskripsi: string;
-  statusMenu: string;
+  harga: number;
+  kategori: string;
+  deskripsi: string | null;
+  image: string | null;
+  statusMenu: boolean;
+  createAt: string;
+  updateAt: string;
 };

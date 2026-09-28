@@ -31,7 +31,6 @@ export default function DetailOrder({ route }: Props) {
 
   const [updateStatus, setUpdateStatus] = useState(false);
 
-  // PEMBAYARAN
   const [metodePembayaran, setMetodePembayaran] = useState("CASH");
   const [jumlahDibayar, setJumlahDibayar] = useState("");
   const [showMetode, setShowMetode] = useState(false);
@@ -56,7 +55,6 @@ export default function DetailOrder({ route }: Props) {
     getOrderDetail();
   }, [orderId]);
 
-  // UPDATE STATUS ORDER
   const updateStatusOrder = async (status: string) => {
     try {
       setUpdateStatus(true);
@@ -182,7 +180,7 @@ export default function DetailOrder({ route }: Props) {
     uangDiterima > totalPembayaran ? uangDiterima - totalPembayaran : 0;
 
   return (
-    <View className="my-5 mx-4">
+    <View className="mt-5 mb-12 mx-4">
       <FlatList
         data={orderDetail.pesanMenu}
         keyExtractor={(item) => item.id.toString()}

@@ -12,11 +12,13 @@ type Props = NativeStackScreenProps<RootStackParamList, "Login">;
 export default function LoginScreen({ navigation }: Props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const setUser = userAuthStore((state) => state.setUser);
 
   const login = async () => {
     try {
+      setLoading(true);
       const response = await api.post("/auth/login", {
         email: email,
         password: password,
@@ -33,10 +35,12 @@ export default function LoginScreen({ navigation }: Props) {
 
       setUser(user);
 
-      navigation.replace("Home");
+      navigation.replace("MainTab");
     } catch (error) {
       console.log("error pada login");
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -62,7 +66,9 @@ export default function LoginScreen({ navigation }: Props) {
         <Pressable
           className="bg-blue-900 rounded-lg py-3"
           onPress={login}>
-          <Text className="text-white text-center font-bold">Login</Text>
+          <Text className="text-white text-center font-bold">
+            {loading ? "Loading..." : "Login"}
+          </Text>
         </Pressable>
       </View>
     </SafeAreaView>
