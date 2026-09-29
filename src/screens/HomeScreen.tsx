@@ -149,7 +149,7 @@ export default function HomeScreen({ navigation }: Props) {
             <View className="flex-row items-center justify-between">
               <View>
                 <Text className="text-3xl font-bold text-[#0A2947]">
-                  Dashboard
+                  Dashboard Manajemen
                 </Text>
 
                 <Text className="text-[#8B5E3C] mt-1">

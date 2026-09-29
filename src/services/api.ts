@@ -2,9 +2,9 @@ import axios from "axios";
 import * as SecureStore from "expo-secure-store";
 
 const api = axios.create({
-  baseURL: "http://192.168.1.29:3000/api", //wifi kosan
+  // baseURL: "http://192.168.1.29:3000/api", //wifi kosan
   // baseURL: "http://192.168.18.70:3000/api", //wifi dumbways
-  // baseURL: "http://192.168.1.29:3000/api", //wifi rumah
+  baseURL: "http://192.168.1.63:3000/api", //wifi dumbways indihome
 });
 
 api.interceptors.request.use(async (config) => {

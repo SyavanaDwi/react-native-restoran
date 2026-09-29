@@ -79,7 +79,7 @@ export default function EditProfileScreen({ navigation }: Props) {
   };
 
   return (
-    <SafeAreaView className="flex-1 bg-[#F3E4C9] mt-5">
+    <SafeAreaView className="flex-1 bg-[#F3E4C9] ">
       <KeyboardAvoidingView
         style={{ flex: 1 }}
         behavior={Platform.OS === "android" ? "height" : "padding"}>

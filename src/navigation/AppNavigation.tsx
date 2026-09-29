@@ -5,7 +5,6 @@ import { View } from "react-native";
 
 import HomeScreen from "../screens/HomeScreen";
 import MenuScreen from "../screens/MenuScreen";
-import DetailMenu from "../screens/DetailMenuScreen";
 import LoginScreen from "../screens/LoginScreen";
 import DetailOrder from "../screens/DetailOrderScreen";
 import NewOrderSreen from "../screens/NewOrderScreen";
@@ -149,14 +148,6 @@ export default function AppNavigator() {
       <Stack.Screen
         name="MainTab"
         component={MainTab}
-        options={{
-          headerShown: false,
-        }}
-      />
-
-      <Stack.Screen
-        name="DetailMenu"
-        component={DetailMenu}
         options={{
           headerShown: false,
         }}

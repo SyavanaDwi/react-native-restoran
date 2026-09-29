@@ -99,7 +99,7 @@ export default function MenuScreen({ navigation }: Props) {
   }
 
   return (
-    <SafeAreaView className="flex-1 bg-[#F3E4C9] mt-5">
+    <SafeAreaView className="flex-1 bg-[#F3E4C9] ">
       <View className="flex-1 px-5">
         <FlatList
           data={filterSearch}

@@ -2,12 +2,6 @@ export type RootStackParamList = {
   Login: undefined;
   MainTab: undefined;
 
-  DetailMenu: {
-    menuId: number;
-    nama: string;
-    harga: number;
-  };
-
   DetailOrder: {
     orderId: number;
   };

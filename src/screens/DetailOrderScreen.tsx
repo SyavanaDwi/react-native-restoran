@@ -219,7 +219,7 @@ export default function DetailOrder({ navigation, route }: Props) {
     uangDiterima > totalPembayaran ? uangDiterima - totalPembayaran : 0;
 
   return (
-    <SafeAreaView className="flex-1 bg-[#F3E4C9] mt-5">
+    <SafeAreaView className="flex-1 bg-[#F3E4C9] ">
       <FlatList
         data={orderDetail.pesanMenu}
         keyExtractor={(item) => item.id.toString()}

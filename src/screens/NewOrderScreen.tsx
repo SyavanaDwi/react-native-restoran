@@ -265,7 +265,7 @@ export default function NewOrder({ navigation }: Props) {
   }
 
   return (
-    <SafeAreaView className="flex-1 bg-[#F3E4C9] mt-5">
+    <SafeAreaView className="flex-1 bg-[#F3E4C9] ">
       <KeyboardAvoidingView
         className="flex-1"
         behavior={Platform.OS === "ios" ? "padding" : undefined}>
@@ -582,7 +582,7 @@ export default function NewOrder({ navigation }: Props) {
                           className="border border-[#D3D4C0] rounded-lg w-8 h-8 items-center justify-center"
                           onPress={() => handleUpdateQty(item.id, -1)}>
                           <Text className="text-[#0A2947] font-bold">
-                            {item.jumlah === 1 ? "×" : "−"}
+                            {item.jumlah === 1 ? "-" : "+"}
                           </Text>
                         </Pressable>
 
@@ -609,33 +609,6 @@ export default function NewOrder({ navigation }: Props) {
                     Rp {subTotal.toLocaleString("id-ID")}
                   </Text>
                 </View>
-              </View>
-
-              <View className="mt-4">
-                <Text className="text-[#0A2947] font-semibold mb-2">
-                  Diskon (%)
-                </Text>
-
-                <TextInput
-                  className="border border-[#D3D4C0] rounded-xl px-4 py-3 text-[#0A2947]"
-                  keyboardType="numeric"
-                  value={String(diskonPersen)}
-                  onChangeText={(text) => {
-                    const value = Number(text);
-
-                    if (value < 0) {
-                      setDiskonPersen(0);
-                      return;
-                    }
-
-                    if (value > 100) {
-                      setDiskonPersen(100);
-                      return;
-                    }
-
-                    setDiskonPersen(Number.isNaN(value) ? 0 : value);
-                  }}
-                />
               </View>
 
               <View className="flex-row justify-between mt-4">
